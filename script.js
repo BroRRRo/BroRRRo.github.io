@@ -19,6 +19,7 @@ const translations = {
       arena: "Arena",
       equipment: "Equipos",
       offers: "Ofertas",
+      app: "App",
       contact: "Contacto",
     },
     hero: {
@@ -93,6 +94,16 @@ const translations = {
       eventsTitle: "Cumpleaños y eventos",
       eventsText: "Formato de arena para grupos, torneos privados y celebraciones.",
     },
+    app: {
+      eyebrow: "Mobile app",
+      title: "COLIZEUM en tu teléfono",
+      text: "Acceso rápido a las ventajas del club: consulta tu saldo, sigue las promociones y mantén tus sesiones bajo control desde la app móvil.",
+      badgesAria: "Opciones de descarga de la app",
+      appStoreLabel: "Download on the",
+      googlePlayLabel: "Get it on",
+      phoneTitle: "Club balance",
+      phoneOffer: "Bring a friend: +2h",
+    },
     contact: {
       eyebrow: "Contacto",
       title: "Ven a jugar en Barcelona",
@@ -118,6 +129,7 @@ const translations = {
       arena: "Arena",
       equipment: "Equips",
       offers: "Ofertes",
+      app: "App",
       contact: "Contacte",
     },
     hero: {
@@ -192,6 +204,16 @@ const translations = {
       eventsTitle: "Aniversaris i esdeveniments",
       eventsText: "Format d'arena per a grups, tornejos privats i celebracions.",
     },
+    app: {
+      eyebrow: "App mòbil",
+      title: "COLIZEUM al teu telèfon",
+      text: "Accés ràpid als avantatges del club: consulta el saldo, segueix les promocions i mantén les teves sessions sota control des de l'app mòbil.",
+      badgesAria: "Opcions de descàrrega de l'app",
+      appStoreLabel: "Download on the",
+      googlePlayLabel: "Get it on",
+      phoneTitle: "Saldo del club",
+      phoneOffer: "Porta un amic: +2h",
+    },
     contact: {
       eyebrow: "Contacte",
       title: "Vine a jugar a Barcelona",
@@ -217,6 +239,7 @@ const translations = {
       arena: "Арена",
       equipment: "Оборудование",
       offers: "Акции",
+      app: "Приложение",
       contact: "Контакты",
     },
     hero: {
@@ -291,6 +314,16 @@ const translations = {
       eventsTitle: "Дни рождения и события",
       eventsText: "Формат арены для групп, частных турниров и праздников.",
     },
+    app: {
+      eyebrow: "Мобильное приложение",
+      title: "COLIZEUM в твоём телефоне",
+      text: "Быстрый доступ к преимуществам клуба: проверяйте баланс, следите за акциями и контролируйте свои игровые сессии через мобильное приложение.",
+      badgesAria: "Варианты загрузки приложения",
+      appStoreLabel: "Download on the",
+      googlePlayLabel: "Get it on",
+      phoneTitle: "Баланс клуба",
+      phoneOffer: "Приведи друга: +2ч",
+    },
     contact: {
       eyebrow: "Контакты",
       title: "Приходите играть в Барселоне",
@@ -316,6 +349,7 @@ const translations = {
       arena: "场馆",
       equipment: "设备",
       offers: "优惠",
+      app: "App",
       contact: "联系",
     },
     hero: {
@@ -389,6 +423,16 @@ const translations = {
       nightText: "适合喜欢晚点开玩的长时间游戏。",
       eventsTitle: "生日和活动",
       eventsText: "适合团体、私人赛事和庆祝活动的电竞馆形式。",
+    },
+    app: {
+      eyebrow: "移动应用",
+      title: "手机里的 COLIZEUM",
+      text: "快速使用俱乐部权益：查看余额、关注优惠，并通过移动应用管理你的游戏时段。",
+      badgesAria: "应用下载选项",
+      appStoreLabel: "Download on the",
+      googlePlayLabel: "Get it on",
+      phoneTitle: "俱乐部余额",
+      phoneOffer: "带朋友来：+2小时",
     },
     contact: {
       eyebrow: "联系",
