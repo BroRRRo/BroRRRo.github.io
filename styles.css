@@ -86,23 +86,17 @@ img {
 }
 
 .brand-mark {
-  display: grid;
+  display: block;
   width: 42px;
   height: 42px;
-  place-items: center;
   border-radius: 50%;
-  background: var(--yellow);
   box-shadow: 0 0 28px rgba(255, 230, 101, 0.32);
-  color: #000;
-  font-size: 0;
-  font-weight: 900;
+  flex: 0 0 auto;
 }
 
-.brand-mark::before {
-  content: "×○";
-  font-family: "TT Squares", Mazzard, monospace;
-  font-size: 15px;
-  letter-spacing: 1px;
+.brand-mark img {
+  width: 100%;
+  height: 100%;
 }
 
 .brand strong,
