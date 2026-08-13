@@ -35,6 +35,7 @@
           <a href="#ofertas" data-i18n="nav.offers">Ofertas</a>
           <a href="#app" data-i18n="nav.app">App</a>
           <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+          <a href="#legal" data-i18n="nav.legal">Legal</a>
         </nav>
 
         <div class="language-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:language.aria">
@@ -350,16 +351,29 @@
           </p>
           <div class="contact-links">
             <a href="tel:+34620965818">+34 620 965 818</a>
-            <a href="https://wa.me/34620965818">WhatsApp</a>
+            <a class="terms-required" href="https://wa.me/34620965818" aria-disabled="true">WhatsApp</a>
           </div>
+          <label class="terms-consent">
+            <input type="checkbox" id="terms-consent">
+            <span>
+              He leído y acepto los
+              <a href="#terms">Términos y Condiciones Generales</a>.
+            </span>
+          </label>
         </div>
         <div class="map-card" aria-label="Mapa de COLIZEUM Barcelona" data-i18n-attr="aria-label:contact.mapAria">
+          <div class="map-consent" data-map-consent>
+            <strong>Google Maps</strong>
+            <p>Para mostrar el mapa se cargan servicios de Google, que pueden instalar cookies de terceros.</p>
+            <button type="button" class="button primary" data-cookie-open>Configurar cookies</button>
+          </div>
           <iframe
             title="Mapa de COLIZEUM Barcelona"
             data-i18n-attr="title:contact.mapAria"
-            src="https://www.google.com/maps?q=Gran%20Via%20de%20les%20Corts%20Catalanes%20661%2C%20Barcelona&output=embed"
+            data-src="https://www.google.com/maps?q=Gran%20Via%20de%20les%20Corts%20Catalanes%20661%2C%20Barcelona&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
+            hidden
           ></iframe>
           <div class="map-overlay">
             <span>Gran Via de les Corts Catalanes 661</span>
@@ -367,12 +381,100 @@
           </div>
         </div>
       </section>
+
+      <section class="section legal-section" id="legal">
+        <div class="section-head">
+          <p class="eyebrow">Legal</p>
+          <h2>Información legal y privacidad</h2>
+          <p>
+            Documentos informativos del sitio web de COLIZEUM Barcelona. Estos textos
+            son una base operativa y deben completarse con los datos fiscales reales del titular.
+          </p>
+        </div>
+        <div class="legal-grid">
+          <article id="privacy">
+            <h3>Política de Privacidad</h3>
+            <p><strong>Responsable:</strong> titular de COLIZEUM Barcelona, pendiente de completar razón social, NIF/CIF y correo electrónico de privacidad.</p>
+            <p><strong>Datos tratados:</strong> datos que el usuario facilite voluntariamente al llamar, escribir por WhatsApp o contactar con el club.</p>
+            <p><strong>Finalidades:</strong> atender consultas, informar sobre disponibilidad, gestionar reservas o eventos solicitados y mantener la relación comercial.</p>
+            <p><strong>Base jurídica:</strong> solicitud precontractual o contractual del usuario, interés legítimo en responder comunicaciones y consentimiento cuando sea necesario.</p>
+            <p><strong>Conservación:</strong> durante el tiempo necesario para atender la solicitud y cumplir obligaciones legales aplicables.</p>
+            <p><strong>Derechos:</strong> acceso, rectificación, supresión, oposición, limitación, portabilidad y reclamación ante la Agencia Española de Protección de Datos.</p>
+          </article>
+          <article id="legal-notice">
+            <h3>Aviso Legal</h3>
+            <p><strong>Sitio web:</strong> COLIZEUM Barcelona.</p>
+            <p><strong>Domicilio del club:</strong> Gran Via de les Corts Catalanes 661, Barcelona.</p>
+            <p><strong>Teléfono:</strong> +34 620 965 818.</p>
+            <p><strong>Titular, NIF/CIF, domicilio fiscal, email y datos registrales:</strong> pendiente de completar por el propietario del negocio.</p>
+            <p>El contenido del sitio tiene carácter informativo. Los precios, promociones y disponibilidad pueden cambiar y deben confirmarse con el club.</p>
+          </article>
+          <article id="terms">
+            <h3>Términos y Condiciones Generales</h3>
+            <p>El acceso al club, uso de equipos y participación en eventos queda sujeto a disponibilidad, normas internas de convivencia, respeto al personal y al resto de usuarios.</p>
+            <p>Los menores de edad deberán cumplir las condiciones de acceso aplicables y, cuando proceda, contar con autorización de su representante legal.</p>
+            <p>El usuario se compromete a usar los equipos de forma responsable y a no instalar software, modificar configuraciones, acceder a contenidos ilícitos ni dañar material del club.</p>
+            <p>Las promociones, incluyendo “trae a un amigo y recibe 2 horas gratis”, pueden estar sujetas a condiciones, límites de uso y validación por el personal del club.</p>
+          </article>
+          <article id="cookies">
+            <h3>Política de Cookies</h3>
+            <p>Este sitio utiliza almacenamiento técnico local para recordar el idioma y la elección del banner de cookies. Estos elementos son necesarios para prestar el servicio solicitado.</p>
+            <p>Las cookies o servicios no necesarios, como la carga de Google Maps, quedan bloqueados hasta que el usuario los acepte en el panel de configuración.</p>
+            <p><strong>Categorías:</strong> técnicas necesarias, preferencias, analíticas y terceros/medios externos.</p>
+            <p><strong>Terceros identificados:</strong> Google Maps, solo si el usuario acepta la categoría de terceros o pulsa una acción que lo habilite.</p>
+            <button type="button" class="button ghost" data-cookie-open>Configurar cookies</button>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <span>COLIZEUM Barcelona</span>
       <span data-i18n="footer.text">Arena gaming en Barcelona.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#legal-notice">Aviso Legal</a>
+        <a href="#terms">Términos y Condiciones</a>
+        <a href="#cookies">Política de Cookies</a>
+        <button type="button" data-cookie-open>Cookies</button>
+      </nav>
     </footer>
+
+    <div class="cookie-banner" data-cookie-banner role="dialog" aria-modal="true" aria-labelledby="cookie-title" hidden>
+      <div class="cookie-copy">
+        <strong id="cookie-title">Configuración de cookies</strong>
+        <p>
+          Usamos cookies técnicas necesarias y, solo con tu consentimiento, cookies
+          opcionales para preferencias, analítica y servicios de terceros como Google Maps.
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" class="button ghost" data-cookie-reject>Rechazar</button>
+        <button type="button" class="button ghost" data-cookie-config>Configurar</button>
+        <button type="button" class="button primary" data-cookie-accept>Aceptar</button>
+      </div>
+      <form class="cookie-panel" data-cookie-panel hidden>
+        <label>
+          <input type="checkbox" checked disabled>
+          <span>Cookies técnicas necesarias <small>Siempre activas: idioma, seguridad y preferencias de consentimiento.</small></span>
+        </label>
+        <label>
+          <input type="checkbox" name="preferences">
+          <span>Preferencias <small>Recordar ajustes de experiencia del sitio.</small></span>
+        </label>
+        <label>
+          <input type="checkbox" name="analytics">
+          <span>Analítica <small>Medición agregada de visitas si se instala una herramienta en el futuro.</small></span>
+        </label>
+        <label>
+          <input type="checkbox" name="thirdParty">
+          <span>Terceros y medios externos <small>Google Maps y otros contenidos externos.</small></span>
+        </label>
+        <div class="cookie-actions">
+          <button type="button" class="button ghost" data-cookie-save>Guardar selección</button>
+        </div>
+      </form>
+    </div>
 
     <script src="script.js"></script>
   </body>

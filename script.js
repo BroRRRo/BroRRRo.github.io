@@ -2,6 +2,13 @@ const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const languageButtons = document.querySelectorAll("[data-lang]");
 const metaDescription = document.querySelector('meta[name="description"]');
+const cookieBanner = document.querySelector("[data-cookie-banner]");
+const cookiePanel = document.querySelector("[data-cookie-panel]");
+const mapFrame = document.querySelector(".map-card iframe");
+const mapConsent = document.querySelector("[data-map-consent]");
+const termsConsent = document.querySelector("#terms-consent");
+const termsRequiredLinks = document.querySelectorAll(".terms-required");
+const COOKIE_STORAGE_KEY = "colizeumCookieConsent";
 
 const translations = {
   es: {
@@ -21,6 +28,7 @@ const translations = {
       offers: "Ofertas",
       app: "App",
       contact: "Contacto",
+      legal: "Legal",
     },
     hero: {
       eyebrow: "Cyber sport arena en Barcelona",
@@ -131,6 +139,7 @@ const translations = {
       offers: "Ofertes",
       app: "App",
       contact: "Contacte",
+      legal: "Legal",
     },
     hero: {
       eyebrow: "Cyber sport arena a Barcelona",
@@ -241,6 +250,7 @@ const translations = {
       offers: "Акции",
       app: "Приложение",
       contact: "Контакты",
+      legal: "Legal",
     },
     hero: {
       eyebrow: "Киберспортивная арена в Барселоне",
@@ -351,6 +361,7 @@ const translations = {
       offers: "优惠",
       app: "App",
       contact: "联系",
+      legal: "Legal",
     },
     hero: {
       eyebrow: "巴塞罗那电竞馆",
@@ -501,4 +512,148 @@ languageButtons.forEach((button) => {
   });
 });
 
+const defaultCookieConsent = {
+  necessary: true,
+  preferences: false,
+  analytics: false,
+  thirdParty: false,
+  decidedAt: "",
+};
+
+const readCookieConsent = () => {
+  try {
+    return {
+      ...defaultCookieConsent,
+      ...JSON.parse(localStorage.getItem(COOKIE_STORAGE_KEY) || "{}"),
+    };
+  } catch {
+    return { ...defaultCookieConsent };
+  }
+};
+
+const writeCookieConsent = (preferences) => {
+  const nextPreferences = {
+    ...defaultCookieConsent,
+    ...preferences,
+    necessary: true,
+    decidedAt: new Date().toISOString(),
+  };
+
+  localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(nextPreferences));
+  return nextPreferences;
+};
+
+const loadThirdPartyServices = (preferences) => {
+  if (!mapFrame || !mapConsent) {
+    return;
+  }
+
+  if (preferences.thirdParty && mapFrame.dataset.src && !mapFrame.src) {
+    mapFrame.src = mapFrame.dataset.src;
+    mapFrame.hidden = false;
+    mapConsent.hidden = true;
+  } else if (!preferences.thirdParty) {
+    mapFrame.removeAttribute("src");
+    mapFrame.hidden = true;
+    mapConsent.hidden = false;
+  }
+};
+
+const applyCookieConsent = (preferences) => {
+  loadThirdPartyServices(preferences);
+
+  if (cookiePanel) {
+    cookiePanel.elements.preferences.checked = Boolean(preferences.preferences);
+    cookiePanel.elements.analytics.checked = Boolean(preferences.analytics);
+    cookiePanel.elements.thirdParty.checked = Boolean(preferences.thirdParty);
+  }
+};
+
+const closeCookieBanner = () => {
+  if (cookieBanner) {
+    cookieBanner.hidden = true;
+  }
+};
+
+const openCookieBanner = () => {
+  if (cookieBanner) {
+    cookieBanner.hidden = false;
+  }
+};
+
+document.querySelectorAll("[data-cookie-open]").forEach((button) => {
+  button.addEventListener("click", () => {
+    applyCookieConsent(readCookieConsent());
+    openCookieBanner();
+    if (cookiePanel) {
+      cookiePanel.hidden = false;
+    }
+  });
+});
+
+document.querySelector("[data-cookie-config]")?.addEventListener("click", () => {
+  if (cookiePanel) {
+    cookiePanel.hidden = !cookiePanel.hidden;
+  }
+});
+
+document.querySelector("[data-cookie-accept]")?.addEventListener("click", () => {
+  const preferences = writeCookieConsent({
+    preferences: true,
+    analytics: true,
+    thirdParty: true,
+  });
+  applyCookieConsent(preferences);
+  closeCookieBanner();
+});
+
+document.querySelector("[data-cookie-reject]")?.addEventListener("click", () => {
+  const preferences = writeCookieConsent({
+    preferences: false,
+    analytics: false,
+    thirdParty: false,
+  });
+  applyCookieConsent(preferences);
+  closeCookieBanner();
+});
+
+document.querySelector("[data-cookie-save]")?.addEventListener("click", () => {
+  if (!cookiePanel) {
+    return;
+  }
+
+  const preferences = writeCookieConsent({
+    preferences: cookiePanel.elements.preferences.checked,
+    analytics: cookiePanel.elements.analytics.checked,
+    thirdParty: cookiePanel.elements.thirdParty.checked,
+  });
+
+  applyCookieConsent(preferences);
+  closeCookieBanner();
+});
+
+const updateTermsLinks = () => {
+  const accepted = Boolean(termsConsent?.checked);
+  termsRequiredLinks.forEach((link) => {
+    link.setAttribute("aria-disabled", String(!accepted));
+  });
+};
+
+termsConsent?.addEventListener("change", updateTermsLinks);
+
+termsRequiredLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    if (!termsConsent?.checked) {
+      event.preventDefault();
+      termsConsent?.focus();
+    }
+  });
+});
+
 applyLanguage(localStorage.getItem("siteLanguage") || "es");
+const storedCookieConsent = localStorage.getItem(COOKIE_STORAGE_KEY);
+applyCookieConsent(readCookieConsent());
+if (!storedCookieConsent) {
+  openCookieBanner();
+}
+updateTermsLinks();
