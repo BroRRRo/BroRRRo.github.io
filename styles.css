@@ -288,7 +288,7 @@ h3 {
 
 .button,
 .contact-links a,
-.app-badges span {
+.app-badges a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -308,7 +308,7 @@ h3 {
 
 .button.ghost,
 .contact-links a,
-.app-badges span {
+.app-badges a {
   border: 1px solid var(--line);
   background: rgba(255, 230, 101, 0.08);
 }
@@ -656,13 +656,18 @@ h3 {
   z-index: 1;
 }
 
-.app-badges span {
+.app-badges a {
   flex-direction: column;
   align-items: flex-start;
   min-width: 164px;
   min-height: 58px;
   padding: 8px 18px;
   line-height: 1.1;
+}
+
+.app-badges a:hover {
+  border-color: rgba(255, 230, 101, 0.7);
+  background: rgba(255, 230, 101, 0.14);
 }
 
 .app-badges small {

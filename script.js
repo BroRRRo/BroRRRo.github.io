@@ -104,8 +104,8 @@ const translations = {
     },
     app: {
       eyebrow: "Mobile app",
-      title: "COLIZEUM en tu teléfono",
-      text: "Acceso rápido a las ventajas del club: consulta tu saldo, sigue las promociones y mantén tus sesiones bajo control desde la app móvil.",
+      title: "C-world en tu teléfono",
+      text: "Acceso rápido a las ventajas del club: consulta tu saldo, elige sala y tarifa, sigue las promociones y prepara tu visita desde C-world.",
       badgesAria: "Opciones de descarga de la app",
       appStoreLabel: "Download on the",
       googlePlayLabel: "Get it on",
@@ -215,8 +215,8 @@ const translations = {
     },
     app: {
       eyebrow: "App mòbil",
-      title: "COLIZEUM al teu telèfon",
-      text: "Accés ràpid als avantatges del club: consulta el saldo, segueix les promocions i mantén les teves sessions sota control des de l'app mòbil.",
+      title: "C-world al teu telèfon",
+      text: "Accés ràpid als avantatges del club: consulta el saldo, tria sala i tarifa, segueix les promocions i prepara la visita des de C-world.",
       badgesAria: "Opcions de descàrrega de l'app",
       appStoreLabel: "Download on the",
       googlePlayLabel: "Get it on",
@@ -326,8 +326,8 @@ const translations = {
     },
     app: {
       eyebrow: "Мобильное приложение",
-      title: "COLIZEUM в твоём телефоне",
-      text: "Быстрый доступ к преимуществам клуба: проверяйте баланс, следите за акциями и контролируйте свои игровые сессии через мобильное приложение.",
+      title: "C-world в твоём телефоне",
+      text: "Быстрый доступ к преимуществам клуба: проверяйте баланс, выбирайте зал и тариф, следите за акциями и готовьте визит через C-world.",
       badgesAria: "Варианты загрузки приложения",
       appStoreLabel: "Download on the",
       googlePlayLabel: "Get it on",
@@ -437,8 +437,8 @@ const translations = {
     },
     app: {
       eyebrow: "移动应用",
-      title: "手机里的 COLIZEUM",
-      text: "快速使用俱乐部权益：查看余额、关注优惠，并通过移动应用管理你的游戏时段。",
+      title: "手机里的 C-world",
+      text: "快速使用俱乐部权益：查看余额、选择大厅和价格、关注优惠，并通过 C-world 准备到店游玩。",
       badgesAria: "应用下载选项",
       appStoreLabel: "Download on the",
       googlePlayLabel: "Get it on",
