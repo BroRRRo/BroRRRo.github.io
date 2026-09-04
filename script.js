@@ -13,8 +13,8 @@ const COOKIE_STORAGE_KEY = "colizeumCookieConsent";
 const translations = {
   es: {
     meta: {
-      title: "COLIZEUM Barcelona",
-      description: "COLIZEUM Barcelona: gaming club barcelona, gaming arena barcelona y pc gaming barcelona con precios, equipos, ofertas y contactos.",
+      title: "Gaming Center en Barcelona | Colizeum Tetuan Gaming arena E-sports",
+      description: "Gaming center en Barcelona con PCs gaming, zona VIP, tarifas por horas y sesiones nocturnas. Visítanos en Gran Via de les Corts Catalanes 661.",
     },
     language: {
       aria: "Idioma",
@@ -22,6 +22,9 @@ const translations = {
     nav: {
       aria: "Principal",
       openMenu: "Abrir menú",
+      home: "Gaming Center",
+      birthdays: "Cumpleaños Gaming",
+      about: "Sobre Colizeum",
       prices: "Precios",
       arena: "Arena",
       equipment: "Equipos",
@@ -124,8 +127,8 @@ const translations = {
   },
   ca: {
     meta: {
-      title: "COLIZEUM Barcelona",
-      description: "COLIZEUM Barcelona: gaming club barcelona, gaming arena barcelona i pc gaming barcelona amb preus, equips, ofertes i contacte.",
+      title: "Gaming Center en Barcelona | Colizeum Tetuan Gaming arena E-sports",
+      description: "Gaming center en Barcelona amb PCs gaming, zona VIP, tarifes per hores i sessions nocturnes. Visita'ns a Gran Via de les Corts Catalanes 661.",
     },
     language: {
       aria: "Idioma",
@@ -133,6 +136,9 @@ const translations = {
     nav: {
       aria: "Principal",
       openMenu: "Obrir menú",
+      home: "Gaming Center",
+      birthdays: "Cumpleaños Gaming",
+      about: "Sobre Colizeum",
       prices: "Preus",
       arena: "Arena",
       equipment: "Equips",
@@ -235,8 +241,8 @@ const translations = {
   },
   ru: {
     meta: {
-      title: "COLIZEUM Барселона",
-      description: "COLIZEUM Barcelona: gaming club barcelona, gaming arena barcelona и pc gaming barcelona с ценами, оборудованием, акциями и контактами.",
+      title: "Gaming Center en Barcelona | Colizeum Tetuan Gaming arena E-sports",
+      description: "Gaming center en Barcelona с игровыми ПК, VIP-зоной, почасовыми тарифами и ночными сессиями. Gran Via de les Corts Catalanes 661.",
     },
     language: {
       aria: "Язык",
@@ -244,6 +250,9 @@ const translations = {
     nav: {
       aria: "Главное меню",
       openMenu: "Открыть меню",
+      home: "Gaming Center",
+      birthdays: "Cumpleaños Gaming",
+      about: "Sobre Colizeum",
       prices: "Цены",
       arena: "Арена",
       equipment: "Оборудование",
@@ -346,8 +355,8 @@ const translations = {
   },
   zh: {
     meta: {
-      title: "COLIZEUM 巴塞罗那",
-      description: "COLIZEUM Barcelona：gaming club barcelona、gaming arena barcelona 和 pc gaming barcelona，包含价格、设备、优惠和联系方式。",
+      title: "Gaming Center en Barcelona | Colizeum Tetuan Gaming arena E-sports",
+      description: "Gaming center en Barcelona，配备电竞电脑、VIP 区、按小时价格和夜间时段。地址 Gran Via de les Corts Catalanes 661。",
     },
     language: {
       aria: "语言",
@@ -355,6 +364,9 @@ const translations = {
     nav: {
       aria: "主导航",
       openMenu: "打开菜单",
+      home: "Gaming Center",
+      birthdays: "Cumpleaños Gaming",
+      about: "Sobre Colizeum",
       prices: "价格",
       arena: "场馆",
       equipment: "设备",
@@ -465,8 +477,10 @@ const applyLanguage = (language) => {
   const activeLanguage = translations[language] ? language : "es";
 
   document.documentElement.lang = activeLanguage;
-  document.title = translations[activeLanguage].meta.title;
-  if (metaDescription) {
+  if (document.body.dataset.page === "home") {
+    document.title = translations[activeLanguage].meta.title;
+  }
+  if (document.body.dataset.page === "home" && metaDescription) {
     metaDescription.setAttribute("content", translations[activeLanguage].meta.description);
   }
 

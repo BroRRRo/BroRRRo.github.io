@@ -626,6 +626,107 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.birthday-preview {
+  background:
+    linear-gradient(135deg, rgba(255, 230, 101, 0.12), transparent 34%),
+    #111;
+}
+
+.page-main {
+  padding-top: 76px;
+}
+
+.page-hero {
+  min-height: 58vh;
+  display: grid;
+  align-items: end;
+  padding: 150px clamp(20px, 5vw, 72px) 58px;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.52)),
+    linear-gradient(135deg, rgba(255, 230, 101, 0.18), transparent 44%),
+    url("assets/barcelona-club-photo.png") center right / cover no-repeat;
+}
+
+.page-hero.alt-bg {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.98), rgba(0, 0, 0, 0.58)),
+    linear-gradient(135deg, rgba(255, 230, 101, 0.16), transparent 44%),
+    #111;
+}
+
+.page-hero-content {
+  width: min(860px, 100%);
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: 720px;
+  color: #e8e8e8;
+  font-size: clamp(17px, 2vw, 22px);
+}
+
+.content-grid,
+.info-cards {
+  display: grid;
+  gap: 18px;
+}
+
+.content-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.56fr);
+  align-items: start;
+}
+
+.content-panel,
+.info-cards article {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background:
+    linear-gradient(145deg, rgba(255, 230, 101, 0.08), transparent 48%),
+    rgba(31, 31, 31, 0.94);
+  box-shadow: var(--shadow);
+}
+
+.content-panel p,
+.content-panel li,
+.info-cards p,
+.info-cards li {
+  color: var(--muted);
+}
+
+.content-panel h2,
+.info-cards h2 {
+  font-size: clamp(30px, 4vw, 48px);
+}
+
+.info-cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.plain-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding-left: 18px;
+}
+
+.contact-details {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+  color: var(--muted);
+}
+
+.contact-details strong {
+  color: var(--text);
+}
+
 .mobile-app {
   position: relative;
   display: grid;
@@ -1035,7 +1136,9 @@ h3 {
   .offer-row,
   .mobile-app,
   .contact,
-  .legal-grid {
+  .legal-grid,
+  .content-grid,
+  .info-cards {
     grid-template-columns: 1fr;
   }
 
