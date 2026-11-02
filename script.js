@@ -10,6 +10,12 @@ const mapConsent = document.querySelector("[data-map-consent]");
 const termsConsent = document.querySelector("#terms-consent");
 const termsRequiredLinks = document.querySelectorAll(".terms-required");
 const COOKIE_STORAGE_KEY = "colizeumCookieConsent";
+const birthdayLanguagePaths = {
+  es: "/cumpleanos-gaming-barcelona/",
+  ca: "/ca/cumpleanos-gaming-barcelona/",
+  ru: "/ru/cumpleanos-gaming-barcelona/",
+  zh: "/zh/cumpleanos-gaming-barcelona/",
+};
 
 const translations = {
   es: {
@@ -105,6 +111,11 @@ const translations = {
       nightText: "Sesiones largas para quienes prefieren jugar tarde.",
       eventsTitle: "Cumpleaños y eventos",
       eventsText: "Formato de arena para grupos, torneos privados y celebraciones.",
+    },
+    birthday: {
+      title: "Cumpleaños gaming en Barcelona",
+      text: "Celebra su cumpleaños en COLIZEUM Tetuan BCN: de 5 a 25 jugadores, paquetes de 3 o 5 horas desde 20 € por persona y comida opcional. Standard y VIP al mismo precio. Reserva por WhatsApp con al menos una semana de antelación.",
+      cta: "Ver paquetes de cumpleaños",
     },
     app: {
       eyebrow: "Mobile app",
@@ -220,6 +231,11 @@ const translations = {
       eventsTitle: "Aniversaris i esdeveniments",
       eventsText: "Format d'arena per a grups, tornejos privats i celebracions.",
     },
+    birthday: {
+      title: "Aniversaris gaming a Barcelona",
+      text: "Celebra el seu aniversari a COLIZEUM Tetuan BCN: de 5 a 25 jugadors, paquets de 3 o 5 hores des de 20 € per persona i menjar opcional. Standard i VIP al mateix preu. Reserva per WhatsApp amb almenys una setmana d’antelació.",
+      cta: "Veure paquets d’aniversari",
+    },
     app: {
       eyebrow: "App mòbil",
       title: "C-world al teu telèfon",
@@ -334,6 +350,11 @@ const translations = {
       eventsTitle: "Дни рождения и события",
       eventsText: "Формат арены для групп, частных турниров и праздников.",
     },
+    birthday: {
+      title: "Детский день рождения в Барселоне",
+      text: "Отпразднуйте день рождения в COLIZEUM Tetuan BCN: от 5 до 25 игроков, пакеты на 3 или 5 часов от 20 € с человека, еда по желанию. Standard и VIP по одной цене. Бронируйте через WhatsApp минимум за неделю.",
+      cta: "Посмотреть пакеты для дня рождения",
+    },
     app: {
       eyebrow: "Мобильное приложение",
       title: "C-world в твоём телефоне",
@@ -447,6 +468,11 @@ const translations = {
       nightText: "适合喜欢晚点开玩的长时间游戏。",
       eventsTitle: "生日和活动",
       eventsText: "适合团体、私人赛事和庆祝活动的电竞馆形式。",
+    },
+    birthday: {
+      title: "巴塞罗那儿童电竞生日派对",
+      text: "在 COLIZEUM Tetuan BCN 庆祝生日：5–25 位玩家，3 或 5 小时套餐，每人 20 € 起，可选餐饮。Standard 和 VIP 同价。请至少提前一周通过 WhatsApp 预约。",
+      cta: "查看生日套餐",
     },
     app: {
       eyebrow: "移动应用",
@@ -1181,6 +1207,14 @@ const ensureLanguageSwitch = () => {
 const applyLanguage = (language) => {
   const activeLanguage = translations[language] ? language : "es";
 
+  // Birthday translations have their own crawlable HTML and language URLs.
+  if (document.body.dataset.page === "birthday") {
+    const locale = document.body.dataset.locale || "es";
+    document.documentElement.lang = locale === "zh" ? "zh-Hans" : locale;
+    localStorage.setItem("siteLanguage", locale);
+    return;
+  }
+
   document.documentElement.lang = activeLanguage;
   if (document.body.dataset.page === "home") {
     document.title = translations[activeLanguage].meta.title;
@@ -1207,6 +1241,10 @@ const applyLanguage = (language) => {
   });
 
   applyStaticTextTranslations(activeLanguage);
+
+  document.querySelectorAll('a[href$="/cumpleanos-gaming-barcelona/"]').forEach((link) => {
+    link.setAttribute("href", birthdayLanguagePaths[activeLanguage]);
+  });
 
   languageButtons.forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.lang === activeLanguage));
@@ -1241,6 +1279,10 @@ if (header) {
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    if (document.body.dataset.page === "birthday") {
+      localStorage.setItem("siteLanguage", button.dataset.lang);
+      return;
+    }
     applyLanguage(button.dataset.lang);
   });
 });
@@ -1385,7 +1427,7 @@ const openWhatsAppConsent = (link) => {
     ru: { title: "Связаться в WhatsApp", continue: "Открыть WhatsApp", cancel: "Отмена" },
     zh: { title: "通过 WhatsApp 联系", continue: "打开 WhatsApp", cancel: "取消" },
   };
-  const copy = labels[document.documentElement.lang] || labels.es;
+  const copy = labels[document.documentElement.lang.split("-")[0]] || labels.es;
   const consentLabel = termsConsent?.closest("label");
   if (!consentLabel) {
     return;
