@@ -1230,6 +1230,15 @@ siteNav?.addEventListener("click", (event) => {
 ensureLanguageSwitch();
 collectStaticTextNodes();
 
+const header = document.querySelector(".site-header");
+if (header) {
+  const updateHeaderHeight = () => {
+    document.documentElement.style.setProperty("--header-height", `${header.getBoundingClientRect().height}px`);
+  };
+  updateHeaderHeight();
+  new ResizeObserver(updateHeaderHeight).observe(header);
+}
+
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
     applyLanguage(button.dataset.lang);
@@ -1362,19 +1371,74 @@ document.querySelector("[data-cookie-save]")?.addEventListener("click", () => {
 });
 
 const updateTermsLinks = () => {
-  const accepted = Boolean(termsConsent?.checked);
   termsRequiredLinks.forEach((link) => {
-    link.setAttribute("aria-disabled", String(!accepted));
+    link.removeAttribute("aria-disabled");
   });
 };
 
 termsConsent?.addEventListener("change", updateTermsLinks);
 
+const openWhatsAppConsent = (link) => {
+  const labels = {
+    es: { title: "Contactar por WhatsApp", continue: "Abrir WhatsApp", cancel: "Cancelar" },
+    ca: { title: "Contactar per WhatsApp", continue: "Obrir WhatsApp", cancel: "Cancel·lar" },
+    ru: { title: "Связаться в WhatsApp", continue: "Открыть WhatsApp", cancel: "Отмена" },
+    zh: { title: "通过 WhatsApp 联系", continue: "打开 WhatsApp", cancel: "取消" },
+  };
+  const copy = labels[document.documentElement.lang] || labels.es;
+  const consentLabel = termsConsent?.closest("label");
+  if (!consentLabel) {
+    return;
+  }
+
+  const dialog = document.createElement("dialog");
+  dialog.className = "whatsapp-dialog";
+  dialog.setAttribute("aria-labelledby", "whatsapp-dialog-title");
+  const heading = document.createElement("h2");
+  heading.id = "whatsapp-dialog-title";
+  heading.textContent = copy.title;
+
+  const label = consentLabel.cloneNode(true);
+  const checkbox = label.querySelector("input");
+  checkbox.id = "whatsapp-dialog-consent";
+  checkbox.checked = false;
+  const actions = document.createElement("div");
+  actions.className = "whatsapp-dialog-actions";
+  const proceed = document.createElement("a");
+  proceed.className = "button primary";
+  proceed.href = link.href;
+  proceed.textContent = copy.continue;
+  proceed.setAttribute("aria-disabled", "true");
+  const cancel = document.createElement("button");
+  cancel.type = "button";
+  cancel.className = "button ghost";
+  cancel.textContent = copy.cancel;
+  cancel.addEventListener("click", () => dialog.close());
+  checkbox.addEventListener("change", () => {
+    proceed.setAttribute("aria-disabled", String(!checkbox.checked));
+  });
+  proceed.addEventListener("click", (event) => {
+    if (!checkbox.checked) {
+      event.preventDefault();
+      checkbox.focus();
+      return;
+    }
+    termsConsent.checked = true;
+    updateTermsLinks();
+    dialog.close();
+  });
+  dialog.addEventListener("close", () => dialog.remove(), { once: true });
+  actions.append(proceed, cancel);
+  dialog.append(heading, label, actions);
+  document.body.append(dialog);
+  dialog.showModal();
+};
+
 termsRequiredLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     if (!termsConsent?.checked) {
       event.preventDefault();
-      termsConsent?.focus();
+      openWhatsAppConsent(link);
     }
   });
 });

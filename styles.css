@@ -12,6 +12,7 @@
   --yellow-3: #fcdf3b;
   --line: rgba(255, 230, 101, 0.22);
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+  --header-height: 92px;
 }
 
 * {
@@ -20,12 +21,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
+  overflow-x: clip;
 }
 
 body {
   position: relative;
   margin: 0;
-  overflow-x: hidden;
   background:
     linear-gradient(135deg, rgba(255, 230, 101, 0.08), transparent 26rem),
     radial-gradient(circle at 90% 8%, rgba(252, 223, 59, 0.12), transparent 23rem),
@@ -63,7 +65,7 @@ img {
 }
 
 .site-header {
-  position: fixed;
+  position: sticky;
   z-index: 20;
   top: 0;
   right: 0;
@@ -72,10 +74,9 @@ img {
   align-items: center;
   justify-content: space-between;
   min-height: 76px;
-  padding: 16px clamp(20px, 5vw, 72px);
+  padding: calc(16px + env(safe-area-inset-top, 0px)) max(20px, 5vw, env(safe-area-inset-right, 0px)) 16px max(20px, 5vw, env(safe-area-inset-left, 0px));
   border-bottom: 1px solid var(--line);
-  background: rgba(0, 0, 0, 0.84);
-  backdrop-filter: blur(18px);
+  background: #000;
 }
 
 .brand {
@@ -191,11 +192,11 @@ img {
 
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: calc(92svh - var(--header-height));
   overflow: hidden;
   display: grid;
   align-items: end;
-  padding: 156px clamp(20px, 5vw, 72px) 40px;
+  padding: 80px clamp(20px, 5vw, 72px) 40px;
 }
 
 .hero-media,
@@ -633,7 +634,7 @@ h3 {
 }
 
 .page-main {
-  padding-top: 76px;
+  padding-top: 0;
 }
 
 .page-hero {
@@ -1014,7 +1015,7 @@ h3 {
 .cookie-banner {
   position: fixed;
   right: 18px;
-  bottom: 18px;
+  bottom: max(18px, env(safe-area-inset-bottom, 0px));
   z-index: 50;
   display: grid;
   gap: 16px;
@@ -1096,6 +1097,49 @@ h3 {
   font-weight: 500;
 }
 
+.whatsapp-dialog {
+  width: min(460px, calc(100% - 32px));
+  max-height: calc(100svh - 48px);
+  overflow-y: auto;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.whatsapp-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.whatsapp-dialog h2 {
+  margin: 0 0 20px;
+  font-size: 26px;
+  overflow-wrap: anywhere;
+}
+
+.whatsapp-dialog .terms-consent {
+  margin: 0 0 24px;
+}
+
+.whatsapp-dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.whatsapp-dialog-actions .button {
+  min-height: 44px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.whatsapp-dialog-actions [aria-disabled="true"] {
+  opacity: 0.65;
+}
+
 @media (max-width: 1050px) {
   .site-nav {
     gap: 12px;
@@ -1113,8 +1157,8 @@ h3 {
   }
 
   .site-nav {
-    position: fixed;
-    top: 76px;
+    position: absolute;
+    top: 100%;
     right: 16px;
     left: 16px;
     display: none;
@@ -1123,6 +1167,8 @@ h3 {
     border-radius: 12px;
     background: rgba(0, 0, 0, 0.96);
     box-shadow: var(--shadow);
+    max-height: calc(100svh - var(--header-height) - 16px);
+    overflow-y: auto;
   }
 
   .site-nav.is-open {
@@ -1154,7 +1200,7 @@ h3 {
 @media (max-width: 620px) {
   .site-header {
     min-height: 68px;
-    padding: 12px 16px;
+    padding: calc(12px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px));
   }
 
   .brand strong {
@@ -1181,13 +1227,9 @@ h3 {
     font-size: 11px;
   }
 
-  .site-nav {
-    top: 68px;
-  }
-
   .hero {
-    min-height: 96vh;
-    padding: 126px 18px 28px;
+    min-height: calc(96svh - var(--header-height));
+    padding: 58px 18px 28px;
   }
 
   .hero-media {
