@@ -171,6 +171,35 @@
   margin-bottom: 24px;
 }
 
+.birthday-package-included {
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.birthday-assistance {
+  background: #171717;
+}
+
+.birthday-assistance-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.birthday-assistance-points li {
+  min-width: 0;
+  padding-top: 18px;
+  border-top: 2px solid var(--yellow);
+}
+
+.birthday-assistance-points p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .birthday-note {
   max-width: 960px;
   margin: 28px 0 0;
@@ -379,7 +408,8 @@
   }
 
   .birthday-fields,
-  .birthday-steps {
+  .birthday-steps,
+  .birthday-assistance-points {
     grid-template-columns: 1fr;
   }
 
