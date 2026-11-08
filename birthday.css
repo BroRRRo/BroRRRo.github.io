@@ -283,7 +283,7 @@
   font-size: 16px;
 }
 
-.birthday-fields select { overflow: hidden; max-width: 100%; text-overflow: ellipsis; }
+.birthday-fields select { height: 50px; overflow: hidden; max-width: 100%; text-overflow: ellipsis; }
 .birthday-fields :is(input, select), .birthday-actions .button { scroll-margin-bottom: 120px; }
 
 .birthday-fields small {

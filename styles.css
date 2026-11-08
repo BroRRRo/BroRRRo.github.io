@@ -1200,6 +1200,11 @@ h3 {
 }
 
 @media (max-width: 620px) {
+  .legal-section h2 {
+    font-size: 28px;
+    overflow-wrap: anywhere;
+  }
+
   .site-header {
     min-height: 68px;
     padding: calc(12px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px));
