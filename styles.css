@@ -1147,7 +1147,7 @@ h3 {
   }
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1180px) {
   .nav-toggle {
     display: block;
   }
@@ -1164,7 +1164,7 @@ h3 {
     display: none;
     padding: 18px;
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 8px;
     background: rgba(0, 0, 0, 0.96);
     box-shadow: var(--shadow);
     max-height: calc(100svh - var(--header-height) - 16px);
@@ -1174,7 +1174,9 @@ h3 {
   .site-nav.is-open {
     display: grid;
   }
+}
 
+@media (max-width: 940px) {
   .pricing-tables,
   .arena,
   .keyword-grid,

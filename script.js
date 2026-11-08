@@ -16,6 +16,13 @@ const birthdayLanguagePaths = {
   ru: "/ru/cumpleanos-gaming-barcelona/",
   zh: "/zh/cumpleanos-gaming-barcelona/",
 };
+const corporateLanguagePaths = {
+  es: "/team-building-barcelona/",
+  ca: "/ca/team-building-barcelona/",
+  ru: "/ru/team-building-barcelona/",
+  zh: "/zh/team-building-barcelona/",
+  en: "/en/team-building-barcelona/",
+};
 
 const translations = {
   es: {
@@ -31,6 +38,7 @@ const translations = {
       openMenu: "Abrir menú",
       home: "Gaming Center",
       birthdays: "Cumpleaños Gaming",
+      corporate: "Empresas",
       about: "Sobre Colizeum",
       prices: "Precios",
       arena: "Arena",
@@ -117,6 +125,11 @@ const translations = {
       text: "Celebra su cumpleaños en COLIZEUM Tetuan BCN: de 5 a 25 jugadores, paquetes de 3 o 5 horas desde 20 € por persona y comida opcional. Standard y VIP al mismo precio. Reserva por WhatsApp con al menos una semana de antelación.",
       cta: "Ver paquetes de cumpleaños",
     },
+    corporate: {
+      title: "Team building gaming en Barcelona",
+      text: "Eventos para empresas de 5 a 25 participantes: Casual Gaming, torneos y propuestas a medida. También ofrecemos un presupuesto de juego financiado por la empresa para sus empleados.",
+      cta: "Organizar nuestro team building",
+    },
     app: {
       eyebrow: "Mobile app",
       title: "C-world en tu teléfono",
@@ -150,6 +163,7 @@ const translations = {
       openMenu: "Obrir menú",
       home: "Centre gaming",
       birthdays: "Aniversaris gaming",
+      corporate: "Empreses",
       about: "Sobre Colizeum",
       prices: "Preus",
       arena: "Arena",
@@ -236,6 +250,11 @@ const translations = {
       text: "Celebra el seu aniversari a COLIZEUM Tetuan BCN: de 5 a 25 jugadors, paquets de 3 o 5 hores des de 20 € per persona i menjar opcional. Standard i VIP al mateix preu. Reserva per WhatsApp amb almenys una setmana d’antelació.",
       cta: "Veure paquets d’aniversari",
     },
+    corporate: {
+      title: "Team building gaming a Barcelona",
+      text: "Esdeveniments per a empreses de 5 a 25 participants: Casual Gaming, tornejos i propostes a mida. També oferim un pressupost de joc finançat per l’empresa per als seus empleats.",
+      cta: "Organitzar el nostre team building",
+    },
     app: {
       eyebrow: "App mòbil",
       title: "C-world al teu telèfon",
@@ -269,6 +288,7 @@ const translations = {
       openMenu: "Открыть меню",
       home: "Игровой центр",
       birthdays: "Дни рождения",
+      corporate: "Для компаний",
       about: "О Colizeum",
       prices: "Цены",
       arena: "Арена",
@@ -355,6 +375,11 @@ const translations = {
       text: "Отпразднуйте день рождения в COLIZEUM Tetuan BCN: от 5 до 25 игроков, пакеты на 3 или 5 часов от 20 € с человека, еда по желанию. Standard и VIP по одной цене. Бронируйте через WhatsApp минимум за неделю.",
       cta: "Посмотреть пакеты для дня рождения",
     },
+    corporate: {
+      title: "Игровой тимбилдинг в Барселоне",
+      text: "Мероприятия для компаний от 5 до 25 участников: Casual Gaming, турниры и индивидуальные форматы. Также предлагаем оплаченный компанией игровой бюджет для сотрудников.",
+      cta: "Организовать тимбилдинг",
+    },
     app: {
       eyebrow: "Мобильное приложение",
       title: "C-world в твоём телефоне",
@@ -388,6 +413,7 @@ const translations = {
       openMenu: "打开菜单",
       home: "电竞中心",
       birthdays: "生日派对",
+      corporate: "企业活动",
       about: "关于 Colizeum",
       prices: "价格",
       arena: "场馆",
@@ -473,6 +499,11 @@ const translations = {
       title: "巴塞罗那儿童电竞生日派对",
       text: "在 COLIZEUM Tetuan BCN 庆祝生日：5–25 位玩家，3 或 5 小时套餐，每人 20 € 起，可选餐饮。Standard 和 VIP 同价。请至少提前一周通过 WhatsApp 预约。",
       cta: "查看生日套餐",
+    },
+    corporate: {
+      title: "巴塞罗那电竞团建",
+      text: "适合5至25人的企业活动：Casual Gaming、比赛及定制方案。另可安排由公司为员工支付的游戏预算。",
+      cta: "筹备团队活动",
     },
     app: {
       eyebrow: "移动应用",
@@ -1207,8 +1238,8 @@ const ensureLanguageSwitch = () => {
 const applyLanguage = (language) => {
   const activeLanguage = translations[language] ? language : "es";
 
-  // Birthday translations have their own crawlable HTML and language URLs.
-  if (document.body.dataset.page === "birthday") {
+  // Landing-page translations have their own crawlable HTML and language URLs.
+  if (["birthday", "corporate"].includes(document.body.dataset.page)) {
     const locale = document.body.dataset.locale || "es";
     document.documentElement.lang = locale === "zh" ? "zh-Hans" : locale;
     localStorage.setItem("siteLanguage", locale);
@@ -1245,6 +1276,9 @@ const applyLanguage = (language) => {
   document.querySelectorAll('a[href$="/cumpleanos-gaming-barcelona/"]').forEach((link) => {
     link.setAttribute("href", birthdayLanguagePaths[activeLanguage]);
   });
+  document.querySelectorAll('a[href$="/team-building-barcelona/"]').forEach((link) => {
+    link.setAttribute("href", corporateLanguagePaths[activeLanguage]);
+  });
 
   languageButtons.forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.lang === activeLanguage));
@@ -1279,7 +1313,7 @@ if (header) {
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    if (document.body.dataset.page === "birthday") {
+    if (["birthday", "corporate"].includes(document.body.dataset.page)) {
       localStorage.setItem("siteLanguage", button.dataset.lang);
       return;
     }
@@ -1426,6 +1460,7 @@ const openWhatsAppConsent = (link) => {
     ca: { title: "Contactar per WhatsApp", continue: "Obrir WhatsApp", cancel: "Cancel·lar" },
     ru: { title: "Связаться в WhatsApp", continue: "Открыть WhatsApp", cancel: "Отмена" },
     zh: { title: "通过 WhatsApp 联系", continue: "打开 WhatsApp", cancel: "取消" },
+    en: { title: "Contact us on WhatsApp", continue: "Open WhatsApp", cancel: "Cancel" },
   };
   const copy = labels[document.documentElement.lang.split("-")[0]] || labels.es;
   const consentLabel = termsConsent?.closest("label");
@@ -1485,7 +1520,7 @@ termsRequiredLinks.forEach((link) => {
   });
 });
 
-applyLanguage(localStorage.getItem("siteLanguage") || "es");
+applyLanguage(new URLSearchParams(location.search).get("lang") || localStorage.getItem("siteLanguage") || "es");
 const storedCookieConsent = localStorage.getItem(COOKIE_STORAGE_KEY);
 applyCookieConsent(readCookieConsent());
 if (!storedCookieConsent) {
