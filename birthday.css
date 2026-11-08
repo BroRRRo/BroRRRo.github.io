@@ -128,7 +128,7 @@
 
 .birthday-packages {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .birthday-package h3 {
-  min-height: 58px;
+  min-height: 29px;
   margin-bottom: 20px;
 }
 
@@ -162,14 +162,19 @@
 }
 
 .birthday-price span,
-.birthday-package-description {
+.birthday-package-features {
   color: var(--muted);
 }
 
-.birthday-package-description {
+.birthday-package-features {
   flex: 1;
+  padding-left: 20px;
   margin-bottom: 24px;
 }
+
+.birthday-package-features li { margin-bottom: 12px; padding-left: 4px; }
+.birthday-package-features li::marker { color: var(--yellow); }
+.birthday-package[data-package-id="vip"] .birthday-package-features li:last-child { color: var(--yellow); font-weight: 700; }
 
 .birthday-package-included {
   color: var(--yellow);
@@ -278,6 +283,9 @@
   font-size: 16px;
 }
 
+.birthday-fields select { overflow: hidden; max-width: 100%; text-overflow: ellipsis; }
+.birthday-fields :is(input, select), .birthday-actions .button { scroll-margin-bottom: 120px; }
+
 .birthday-fields small {
   color: var(--muted);
   font-weight: 400;
@@ -341,16 +349,11 @@
 .birthday-mobile-bar {
   display: none;
 }
+.birthday-mobile-bar[hidden] { display: none; }
 
 .birthday-page :focus-visible {
   outline: 2px solid var(--yellow);
   outline-offset: 4px;
-}
-
-@media (max-width: 1050px) {
-  .birthday-packages {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 700px) {
@@ -408,6 +411,7 @@
   }
 
   .birthday-fields,
+  .birthday-packages,
   .birthday-steps,
   .birthday-assistance-points {
     grid-template-columns: 1fr;

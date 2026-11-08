@@ -122,7 +122,7 @@ const translations = {
     },
     birthday: {
       title: "Cumpleaños gaming en Barcelona",
-      text: "Celebra su cumpleaños en COLIZEUM Tetuan BCN: de 5 a 25 jugadores, paquetes de 3 o 5 horas desde 20 € por persona y comida opcional. Standard y VIP al mismo precio. Reserva por WhatsApp con al menos una semana de antelación.",
+      text: "Celebra su cumpleaños en COLIZEUM Tetuan BCN con 5–25 jugadores y 3 horas de juego: Standard 20 €, Premium 30 € con comida y bebida, o VIP 40 € con comida, bebida, decoración y una tarjeta regalo con 1 hora gratis para cada participante. Reserva por WhatsApp con al menos una semana de antelación.",
       cta: "Ver paquetes de cumpleaños",
     },
     corporate: {
@@ -247,7 +247,7 @@ const translations = {
     },
     birthday: {
       title: "Aniversaris gaming a Barcelona",
-      text: "Celebra el seu aniversari a COLIZEUM Tetuan BCN: de 5 a 25 jugadors, paquets de 3 o 5 hores des de 20 € per persona i menjar opcional. Standard i VIP al mateix preu. Reserva per WhatsApp amb almenys una setmana d’antelació.",
+      text: "Celebra el seu aniversari a COLIZEUM Tetuan BCN amb 5–25 jugadors i 3 hores de joc: Standard 20 €, Premium 30 € amb menjar i beguda, o VIP 40 € amb menjar, beguda, decoració i una targeta regal amb 1 hora gratis per a cada participant. Reserva per WhatsApp amb almenys una setmana d’antelació.",
       cta: "Veure paquets d’aniversari",
     },
     corporate: {
@@ -372,7 +372,7 @@ const translations = {
     },
     birthday: {
       title: "Детский день рождения в Барселоне",
-      text: "Отпразднуйте день рождения в COLIZEUM Tetuan BCN: от 5 до 25 игроков, пакеты на 3 или 5 часов от 20 € с человека, еда по желанию. Standard и VIP по одной цене. Бронируйте через WhatsApp минимум за неделю.",
+      text: "День рождения в COLIZEUM Tetuan BCN для 5–25 игроков: 3 часа игры во всех пакетах. Standard — 20 €, Premium — 30 € с едой и напитком, VIP — 40 € с едой, напитком, оформлением и подарочной картой с 1 бесплатным часом каждому участнику. Бронируйте через WhatsApp минимум за неделю.",
       cta: "Посмотреть пакеты для дня рождения",
     },
     corporate: {
@@ -497,7 +497,7 @@ const translations = {
     },
     birthday: {
       title: "巴塞罗那儿童电竞生日派对",
-      text: "在 COLIZEUM Tetuan BCN 庆祝生日：5–25 位玩家，3 或 5 小时套餐，每人 20 € 起，可选餐饮。Standard 和 VIP 同价。请至少提前一周通过 WhatsApp 预约。",
+      text: "在COLIZEUM Tetuan BCN庆祝生日，适合5至25人，所有套餐均为3小时。Standard每人20欧元，Premium 30欧元含餐点和饮品，VIP 40欧元另含派对布置及每位参与者1张含1小时免费游戏的礼品卡。请至少提前一周通过WhatsApp预约。",
       cta: "查看生日套餐",
     },
     corporate: {

@@ -15,11 +15,12 @@
   const update = () => {
     const count = players.valueAsNumber;
     const option = packageSelect.selectedOptions[0];
-    const price = Number(option.dataset.price);
+    const pack = config.packages.find(item => item.id === option.value);
+    const price = pack.price;
     const valid = players.validity.valid && date.validity.valid;
     output.textContent = players.validity.valid ? format.format(count * price) : '—';
     error.hidden = valid;
-    const lines = [config.message, '', `${config.labels[0]}: ${count}`, `${config.labels[1]}: ${config.hours[packageSelect.selectedIndex]} (${format.format(price)})`, `${config.labels[2]}: ${format.format(count * price)}`];
+    const lines = [config.message, '', `${config.labels[0]}: ${count}`, `${config.labels[1]}: ${pack.name} (${format.format(price)})`, ...pack.features.map(text => `- ${text}`), `${config.labels[2]}: ${format.format(count * price)}`];
     if (date.value) {
       const [year, month, day] = date.value.split('-').map(Number);
       lines.push(`${config.labels[3]}: ${new Intl.DateTimeFormat(config.lang, {dateStyle: 'long'}).format(new Date(year, month - 1, day))}`);
@@ -39,7 +40,7 @@
       event.stopImmediatePropagation();
       form.reportValidity();
     }
-  });
+  }, {capture: true});
   document.querySelectorAll('[data-package-pick]').forEach(link => {
     link.addEventListener('click', () => {
       packageSelect.value = link.dataset.packagePick;
@@ -47,4 +48,12 @@
     });
   });
   update();
+  const bar = document.querySelector('.birthday-mobile-bar');
+  const visibleSections = new Map();
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => visibleSections.set(entry.target, entry.isIntersecting));
+    bar.hidden = [...visibleSections.values()].some(Boolean);
+  });
+  observer.observe(document.querySelector('.birthday-hero'));
+  observer.observe(document.querySelector('#reserva'));
 })();
