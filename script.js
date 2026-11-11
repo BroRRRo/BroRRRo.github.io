@@ -1160,6 +1160,51 @@ const staticTextTranslations = {
   },
 };
 
+Object.assign(staticTextTranslations, {
+  "Usamos almacenamiento técnico y Google Ads para medir los clics en WhatsApp y teléfono. Las cookies de publicidad y analítica requieren tu consentimiento. Google puede recibir señales sin cookies antes de aceptar o al rechazar. Google Maps solo se carga si aceptas terceros.": {
+    ca: "Fem servir emmagatzematge tècnic i Google Ads per mesurar els clics a WhatsApp i telèfon. Les cookies de publicitat i analítica requereixen el teu consentiment. Google pot rebre senyals sense cookies abans d’acceptar o en rebutjar. Google Maps només es carrega si acceptes tercers.",
+    ru: "Мы используем техническое хранение и Google Ads для измерения кликов по WhatsApp и телефону. Рекламные и аналитические cookies требуют вашего согласия. До принятия или при отказе Google может получать сигналы без cookies. Google Maps загружается только при разрешении сторонних сервисов.",
+    zh: "我们使用技术存储和 Google Ads 衡量 WhatsApp 和电话链接点击。广告和分析 Cookie 需要你的同意。在同意前或拒绝后，Google 可能接收不使用 Cookie 的信号。Google Maps 仅在允许第三方服务后加载。",
+  },
+  "Publicidad: Google Ads": {ca: "Publicitat: Google Ads", ru: "Реклама: Google Ads", zh: "广告：Google Ads"},
+  "Permitir almacenamiento para medición analítica de Google.": {
+    ca: "Permetre l’emmagatzematge per al mesurament analític de Google.",
+    ru: "Разрешить хранение данных для аналитических измерений Google.",
+    zh: "允许 Google 分析测量所需的数据存储。",
+  },
+  "Google Ads mide los clics en WhatsApp y teléfono. Usamos Consent Mode v2 avanzado: el tag se carga con publicidad y analítica denegadas. Antes de aceptar o al rechazar, Google puede recibir señales sin cookies; las cookies publicitarias requieren tu consentimiento. Google Maps permanece bloqueado hasta que aceptas terceros.": {
+    ca: "Google Ads mesura els clics a WhatsApp i telèfon. Fem servir Consent Mode v2 avançat: l’etiqueta es carrega amb publicitat i analítica denegades. Abans d’acceptar o en rebutjar, Google pot rebre senyals sense cookies; les cookies publicitàries requereixen el teu consentiment. Google Maps es manté bloquejat fins que acceptes tercers.",
+    ru: "Google Ads измеряет клики по WhatsApp и телефону. Мы используем расширенный Consent Mode v2: тег загружается с запретом рекламы и аналитики. До согласия или при отказе Google может получать сигналы без cookies; рекламные cookies требуют вашего согласия. Google Maps блокируется до разрешения сторонних сервисов.",
+    zh: "Google Ads 衡量 WhatsApp 和电话链接点击。我们使用高级 Consent Mode v2，标签加载时默认拒绝广告和分析权限。在同意前或拒绝后，Google 可能接收不使用 Cookie 的信号；广告 Cookie 需要你的同意。Google Maps 在允许第三方服务前保持阻止。",
+  },
+  "técnicas necesarias, preferencias, analítica, publicidad y terceros/medios externos.": {
+    ca: "tècniques necessàries, preferències, analítica, publicitat i tercers/mitjans externs.",
+    ru: "необходимые технические, предпочтения, аналитика, реклама и сторонние сервисы/внешние медиа.",
+    zh: "必要技术、偏好、分析、广告和第三方/外部媒体。",
+  },
+  "Google Ireland Limited / Google LLC: Google Ads para medición publicitaria y Google Maps para mapas opcionales.": {
+    ca: "Google Ireland Limited / Google LLC: Google Ads per al mesurament publicitari i Google Maps per als mapes opcionals.",
+    ru: "Google Ireland Limited / Google LLC: Google Ads для рекламных измерений и Google Maps для необязательных карт.",
+    zh: "Google Ireland Limited / Google LLC：Google Ads 用于广告衡量，Google Maps 用于可选地图。",
+  },
+  "Tu elección se guarda en colizeumCookieConsent durante un máximo de 180 días; siteLanguage recuerda el idioma. Google Ads puede usar cookies _gcl_* tras tu consentimiento, con una duración que depende de la cookie y de la configuración de Google. No enviamos el texto de tu solicitud, nombre, empresa ni teléfono como parámetros de conversión.": {
+    ca: "La teva elecció es desa a colizeumCookieConsent durant un màxim de 180 dies; siteLanguage recorda l’idioma. Google Ads pot utilitzar cookies _gcl_* després del teu consentiment, amb una durada que depèn de la cookie i de la configuració de Google. No enviem el text de la sol·licitud, el nom, l’empresa ni el telèfon com a paràmetres de conversió.",
+    ru: "Ваш выбор хранится в colizeumCookieConsent до 180 дней; siteLanguage запоминает язык. После согласия Google Ads может использовать cookies _gcl_*; срок зависит от cookie и настроек Google. Мы не отправляем текст заявки, имя, компанию или телефон в параметрах конверсии.",
+    zh: "你的选择保存在 colizeumCookieConsent 中，最长 180 天；siteLanguage 记住语言。获得同意后，Google Ads 可能使用 _gcl_* Cookie，其期限取决于具体 Cookie 和 Google 设置。我们不会将申请文本、姓名、公司或电话号码作为转化参数发送。",
+  },
+  "Puedes cambiar o retirar tu consentimiento desde «Configurar cookies» en cualquier momento. Al retirarlo actualizamos el consentimiento de Google; las cookies ya existentes pueden eliminarse también desde los ajustes de tu navegador.": {
+    ca: "Pots canviar o retirar el consentiment a «Configurar cookies» en qualsevol moment. En retirar-lo actualitzem el consentiment de Google; les cookies ja existents també es poden eliminar des de la configuració del navegador.",
+    ru: "Вы можете изменить или отозвать согласие через «Настроить cookies» в любой момент. При отзыве мы обновляем статус согласия Google; уже существующие cookies можно также удалить в настройках браузера.",
+    zh: "你可以随时通过“设置 Cookie”修改或撤回同意。撤回时我们会更新 Google 的同意状态；现有 Cookie 也可在浏览器设置中删除。",
+  },
+  "Información de privacidad de Google": {ca: "Informació de privacitat de Google", ru: "Информация Google о конфиденциальности", zh: "Google 隐私信息"},
+  "También medimos clics en WhatsApp y teléfono con Google Ads para evaluar la publicidad. Google recibe información técnica de navegación y del dispositivo según el estado de consentimiento. Consulta la Política de Cookies y la información de privacidad de Google para conocer el tratamiento y las posibles transferencias internacionales.": {
+    ca: "També mesurem els clics a WhatsApp i telèfon amb Google Ads per avaluar la publicitat. Google rep informació tècnica de navegació i del dispositiu segons l’estat del consentiment. Consulta la Política de Cookies i la informació de privacitat de Google per conèixer el tractament i les possibles transferències internacionals.",
+    ru: "Мы также измеряем клики по WhatsApp и телефону через Google Ads для оценки рекламы. Google получает техническую информацию о просмотре сайта и устройстве в зависимости от статуса согласия. Обработка и возможная международная передача данных описаны в Политике cookies и информации Google о конфиденциальности.",
+    zh: "我们还使用 Google Ads 衡量 WhatsApp 和电话点击，以评估广告效果。Google 根据同意状态接收浏览和设备技术信息。有关处理方式和可能的国际数据传输，请参阅 Cookie 政策和 Google 隐私信息。",
+  },
+});
+
 const normalizeText = (value) => value.replace(/\s+/g, " ").trim();
 
 const staticTextNodes = [];
@@ -1322,22 +1367,17 @@ languageButtons.forEach((button) => {
 });
 
 const defaultCookieConsent = {
+  version: 2,
   necessary: true,
   preferences: false,
   analytics: false,
+  marketing: false,
   thirdParty: false,
   decidedAt: "",
 };
 
 const readCookieConsent = () => {
-  try {
-    return {
-      ...defaultCookieConsent,
-      ...JSON.parse(localStorage.getItem(COOKIE_STORAGE_KEY) || "{}"),
-    };
-  } catch {
-    return { ...defaultCookieConsent };
-  }
+  return window.colizeumGoogleAds?.readConsent() || { ...defaultCookieConsent };
 };
 
 const writeCookieConsent = (preferences) => {
@@ -1348,7 +1388,11 @@ const writeCookieConsent = (preferences) => {
     decidedAt: new Date().toISOString(),
   };
 
-  localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(nextPreferences));
+  try {
+    localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(nextPreferences));
+  } catch {
+    // The current choice still works when browser storage is unavailable.
+  }
   return nextPreferences;
 };
 
@@ -1369,11 +1413,13 @@ const loadThirdPartyServices = (preferences) => {
 };
 
 const applyCookieConsent = (preferences) => {
+  window.colizeumGoogleAds?.updateConsent(preferences);
   loadThirdPartyServices(preferences);
 
   if (cookiePanel) {
     cookiePanel.elements.preferences.checked = Boolean(preferences.preferences);
     cookiePanel.elements.analytics.checked = Boolean(preferences.analytics);
+    cookiePanel.elements.marketing.checked = Boolean(preferences.marketing);
     cookiePanel.elements.thirdParty.checked = Boolean(preferences.thirdParty);
   }
 
@@ -1418,6 +1464,7 @@ document.querySelector("[data-cookie-accept]")?.addEventListener("click", () => 
   const preferences = writeCookieConsent({
     preferences: true,
     analytics: true,
+    marketing: true,
     thirdParty: true,
   });
   applyCookieConsent(preferences);
@@ -1428,6 +1475,7 @@ document.querySelector("[data-cookie-reject]")?.addEventListener("click", () => 
   const preferences = writeCookieConsent({
     preferences: false,
     analytics: false,
+    marketing: false,
     thirdParty: false,
   });
   applyCookieConsent(preferences);
@@ -1438,7 +1486,7 @@ document.querySelector("[data-cookie-save]")?.addEventListener("click", () => {
   const preferences = writeCookieConsent({
     preferences: Boolean(cookiePanel?.elements.preferences.checked),
     analytics: Boolean(cookiePanel?.elements.analytics.checked || document.querySelector('[data-cookie-category="analytics"]')?.checked),
-    marketing: Boolean(document.querySelector('[data-cookie-category="marketing"]')?.checked),
+    marketing: Boolean(cookiePanel?.elements.marketing.checked || document.querySelector('[data-cookie-category="marketing"]')?.checked),
     thirdParty: Boolean(cookiePanel?.elements.thirdParty.checked || document.querySelector('[data-cookie-category="thirdParty"]')?.checked),
   });
 
@@ -1521,9 +1569,9 @@ termsRequiredLinks.forEach((link) => {
 });
 
 applyLanguage(new URLSearchParams(location.search).get("lang") || localStorage.getItem("siteLanguage") || "es");
-const storedCookieConsent = localStorage.getItem(COOKIE_STORAGE_KEY);
-applyCookieConsent(readCookieConsent());
-if (!storedCookieConsent) {
+const storedCookieConsent = readCookieConsent();
+applyCookieConsent(storedCookieConsent);
+if (!storedCookieConsent.decidedAt) {
   openCookieBanner();
 }
 updateTermsLinks();
