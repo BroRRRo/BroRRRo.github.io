@@ -1532,6 +1532,8 @@ const openWhatsAppConsent = (link) => {
   const proceed = document.createElement("a");
   proceed.className = "button primary";
   proceed.href = link.href;
+  proceed.dataset.adsPlacement = link.dataset.adsPlacement ||
+    (link.closest('.birthday-hero') ? 'hero' : link.closest('#reserva') ? 'reserva' : 'footer');
   proceed.textContent = copy.continue;
   proceed.setAttribute("aria-disabled", "true");
   const cancel = document.createElement("button");
