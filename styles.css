@@ -209,14 +209,12 @@ img {
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.76) 42%, rgba(0, 0, 0, 0.18) 100%),
     linear-gradient(0deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.12) 58%),
-    linear-gradient(135deg, rgba(255, 230, 101, 0.22), rgba(31, 31, 31, 0.18)),
-    url("assets/barcelona-club-photo.png") center right / cover no-repeat;
-  filter: saturate(0.98) contrast(1.14) brightness(0.86);
-  transform: scale(1.02);
+    url("assets/club/standard-2-1920.webp") center right / cover no-repeat;
+  filter: saturate(0.94);
 }
 
 .hero-media::after {
-  content: "";
+  content: none;
   background-image:
     radial-gradient(circle at 18px 18px, rgba(255, 230, 101, 0.24) 0 2px, transparent 3px),
     linear-gradient(90deg, rgba(255, 230, 101, 0.08) 1px, transparent 1px);
@@ -1235,15 +1233,15 @@ h3 {
   }
 
   .hero {
-    min-height: calc(96svh - var(--header-height));
-    padding: 58px 18px 28px;
+    min-height: calc(84svh - var(--header-height));
+    padding: 40px 18px 28px;
   }
 
   .hero-media {
     background:
       linear-gradient(0deg, rgba(0, 0, 0, 0.99) 0%, rgba(0, 0, 0, 0.76) 54%, rgba(0, 0, 0, 0.32) 100%),
       linear-gradient(135deg, rgba(255, 230, 101, 0.2), rgba(31, 31, 31, 0.1)),
-      url("assets/barcelona-club-photo.png") 62% center / cover no-repeat;
+      url("assets/club/standard-2-1920.webp") 62% center / cover no-repeat;
   }
 
   h1 {
@@ -1251,8 +1249,34 @@ h3 {
   }
 
   .hero-stats {
-    grid-template-columns: 1fr;
-    margin-top: 42px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 28px;
+  }
+
+  .hero-stats div {
+    min-height: 84px;
+    padding: 16px 12px;
+  }
+
+  .hero-stats strong {
+    font-size: 20px;
+  }
+
+  .hero-stats span {
+    font-size: 11px;
+  }
+
+  .hero-stats div:last-child {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 52px;
+  }
+
+  .hero-stats div:last-child span {
+    margin: 0;
   }
 
   .section {

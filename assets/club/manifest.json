@@ -1,0 +1,324 @@
+{
+  "standard-1": {
+    "number": 9,
+    "variants": [
+      {
+        "src": "/assets/club/standard-1-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 19670
+      },
+      {
+        "src": "/assets/club/standard-1-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 54210
+      },
+      {
+        "src": "/assets/club/standard-1-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 168020
+      }
+    ]
+  },
+  "standard-2": {
+    "number": 16,
+    "variants": [
+      {
+        "src": "/assets/club/standard-2-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 20492
+      },
+      {
+        "src": "/assets/club/standard-2-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 55562
+      },
+      {
+        "src": "/assets/club/standard-2-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 166736
+      }
+    ]
+  },
+  "vip": {
+    "number": 7,
+    "variants": [
+      {
+        "src": "/assets/club/vip-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 18034
+      },
+      {
+        "src": "/assets/club/vip-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 50904
+      },
+      {
+        "src": "/assets/club/vip-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 243068
+      }
+    ]
+  },
+  "interior": {
+    "number": 2,
+    "variants": [
+      {
+        "src": "/assets/club/interior-480.webp",
+        "width": 319,
+        "height": 480,
+        "bytes": 16686
+      },
+      {
+        "src": "/assets/club/interior-960.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 63514
+      },
+      {
+        "src": "/assets/club/interior-1920.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 291644
+      }
+    ]
+  },
+  "team": {
+    "number": 11,
+    "variants": [
+      {
+        "src": "/assets/club/team-480.webp",
+        "width": 319,
+        "height": 480,
+        "bytes": 16824
+      },
+      {
+        "src": "/assets/club/team-960.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 46894
+      },
+      {
+        "src": "/assets/club/team-1920.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 134364
+      }
+    ]
+  },
+  "pc": {
+    "number": 15,
+    "variants": [
+      {
+        "src": "/assets/club/pc-480.webp",
+        "width": 319,
+        "height": 480,
+        "bytes": 11010
+      },
+      {
+        "src": "/assets/club/pc-960.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 28818
+      },
+      {
+        "src": "/assets/club/pc-1920.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 80332
+      }
+    ]
+  },
+  "stations": {
+    "number": 12,
+    "variants": [
+      {
+        "src": "/assets/club/stations-480.webp",
+        "width": 319,
+        "height": 480,
+        "bytes": 21348
+      },
+      {
+        "src": "/assets/club/stations-960.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 60768
+      },
+      {
+        "src": "/assets/club/stations-1920.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 196066
+      }
+    ]
+  },
+  "rgb": {
+    "number": 8,
+    "variants": [
+      {
+        "src": "/assets/club/rgb-480.webp",
+        "width": 319,
+        "height": 480,
+        "bytes": 17466
+      },
+      {
+        "src": "/assets/club/rgb-960.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 75642
+      },
+      {
+        "src": "/assets/club/rgb-1920.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 538150
+      }
+    ]
+  },
+  "detail": {
+    "number": 14,
+    "variants": [
+      {
+        "src": "/assets/club/detail-480.webp",
+        "width": 319,
+        "height": 480,
+        "bytes": 19908
+      },
+      {
+        "src": "/assets/club/detail-960.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 74152
+      },
+      {
+        "src": "/assets/club/detail-1920.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 516606
+      }
+    ]
+  },
+  "break": {
+    "number": 17,
+    "variants": [
+      {
+        "src": "/assets/club/break-480.webp",
+        "width": 319,
+        "height": 480,
+        "bytes": 16292
+      },
+      {
+        "src": "/assets/club/break-960.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 40676
+      },
+      {
+        "src": "/assets/club/break-1920.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 103152
+      }
+    ]
+  },
+  "entrance": {
+    "number": 3,
+    "variants": [
+      {
+        "src": "/assets/club/entrance-480.webp",
+        "width": 319,
+        "height": 480,
+        "bytes": 25898
+      },
+      {
+        "src": "/assets/club/entrance-960.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 91522
+      },
+      {
+        "src": "/assets/club/entrance-1920.webp",
+        "width": 1279,
+        "height": 1920,
+        "bytes": 318596
+      }
+    ]
+  },
+  "offers": {
+    "number": 1,
+    "variants": [
+      {
+        "src": "/assets/club/offers-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 21060
+      },
+      {
+        "src": "/assets/club/offers-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 58096
+      },
+      {
+        "src": "/assets/club/offers-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 233618
+      }
+    ]
+  },
+  "lobby": {
+    "number": 5,
+    "variants": [
+      {
+        "src": "/assets/club/lobby-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 16502
+      },
+      {
+        "src": "/assets/club/lobby-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 66166
+      },
+      {
+        "src": "/assets/club/lobby-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 471772
+      }
+    ]
+  },
+  "snacks": {
+    "number": 4,
+    "variants": [
+      {
+        "src": "/assets/club/snacks-480.webp",
+        "width": 319,
+        "height": 480,
+        "bytes": 22102
+      },
+      {
+        "src": "/assets/club/snacks-960.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 74962
+      },
+      {
+        "src": "/assets/club/snacks-1920.webp",
+        "width": 1279,
+        "height": 1920,
+        "bytes": 296810
+      }
+    ]
+  }
+}

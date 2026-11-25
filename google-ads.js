@@ -9,10 +9,11 @@
     bdayReserva: '3N00COvYsbYdEPSU9f5B',
     bdayFooter: 'epFmCPHYsbYdEPSU9f5B',
     bdayCall: 'eWCtCO7YsbYdEPSU9f5B',
+    bdayPackages: '5lBMCPTYsbYdEPSU9f5B',
   };
-  const conversion = label => {
+  const conversion = (label, parameters = {}) => {
     if (typeof window.gtag === 'function') {
-      window.gtag('event', 'conversion', {send_to: 'AW-17714465396/' + label});
+      window.gtag('event', 'conversion', {send_to: 'AW-17714465396/' + label, ...parameters});
     }
   };
   const isBirthdayPage = () => document.body?.dataset?.page === 'birthday' ||
@@ -38,6 +39,10 @@
     if (event.defaultPrevented || event.button !== 0) return;
     const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
     if (!link || link.getAttribute('aria-disabled') === 'true' || link.hasAttribute('download')) return;
+    if (isBirthdayPage() && (link.hasAttribute('data-ads-packages') || link.hasAttribute('data-package-pick'))) {
+      conversion(labels.bdayPackages, {value: 1.0, currency: 'EUR'});
+      return;
+    }
     let url;
     try {
       url = new URL(link.href, location.href);

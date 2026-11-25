@@ -16,8 +16,9 @@
     >
     <link rel="canonical" href="https://colizeumbarcelona.com/">
     <link rel="icon" href="/assets/colizeum-mark.svg" type="image/svg+xml">
-    <link rel="preload" href="assets/barcelona-club-photo.png" as="image">
-    <link rel="stylesheet" href="styles.css?v=mobile-20261108">
+    <link rel="preload" href="/assets/club/standard-2-1920.webp" as="image">
+    <link rel="stylesheet" href="styles.css?v=photos-20261125">
+    <link rel="stylesheet" href="/club-media.css?v=photos-20261125">
   </head>
   <body data-page="home">
     <header class="site-header">
@@ -85,6 +86,10 @@
           </div>
         </div>
       </section>
+
+      <!-- club-rooms:start -->
+<section class="club-section club-rooms" id="salas"><div class="club-heading"><p data-media-label="eyebrow">CONOCE EL CLUB</p><h2 data-media-label="title">Tres salas. Tu espacio para jugar.</h2><p data-media-label="intro">Dos salas Standard de 10 PCs cada una y una sala VIP independiente de 5 PCs. 25 puestos en total; acordamos la distribución de los grupos al reservar.</p></div><div class="club-room-grid"><figure class="club-room" data-room="standard-1"><a class="club-photo-link" href="/assets/club/standard-1-1920.webp" data-photo-open="standard-1" aria-label="Ampliar foto: Standard · Sala 1 · 10 PCs"><img class="club-photo " src="/assets/club/standard-1-960.webp" srcset="/assets/club/standard-1-480.webp 480w, /assets/club/standard-1-960.webp 960w, /assets/club/standard-1-1920.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw" width="960" height="640" alt="Standard · Sala 1 · 10 PCs" data-media-photo="standard-1" loading="lazy" decoding="async"><span class="club-expand" aria-hidden="true"><img class="club-icon" src="/assets/icons/expand.svg" alt="" width="20" height="20"></span></a><figcaption><div class="club-room-title"><h3 data-media-label="names.0">Standard · Sala 1</h3><strong data-media-label="seats.0">10 PCs</strong></div><p data-media-label="specs.0">RTX 5060 · ASUS 27″ · 280 Hz</p></figcaption></figure><figure class="club-room" data-room="standard-2"><a class="club-photo-link" href="/assets/club/standard-2-1920.webp" data-photo-open="standard-2" aria-label="Ampliar foto: Standard · Sala 2 · 10 PCs"><img class="club-photo " src="/assets/club/standard-2-960.webp" srcset="/assets/club/standard-2-480.webp 480w, /assets/club/standard-2-960.webp 960w, /assets/club/standard-2-1920.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw" width="960" height="640" alt="Standard · Sala 2 · 10 PCs" data-media-photo="standard-2" loading="lazy" decoding="async"><span class="club-expand" aria-hidden="true"><img class="club-icon" src="/assets/icons/expand.svg" alt="" width="20" height="20"></span></a><figcaption><div class="club-room-title"><h3 data-media-label="names.1">Standard · Sala 2</h3><strong data-media-label="seats.1">10 PCs</strong></div><p data-media-label="specs.1">RTX 5060 · ASUS 27″ · 280 Hz</p></figcaption></figure><figure class="club-room" data-room="vip"><a class="club-photo-link" href="/assets/club/vip-1920.webp" data-photo-open="vip" aria-label="Ampliar foto: VIP · Sala independiente · 5 PCs"><img class="club-photo " src="/assets/club/vip-960.webp" srcset="/assets/club/vip-480.webp 480w, /assets/club/vip-960.webp 960w, /assets/club/vip-1920.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw" width="960" height="640" alt="VIP · Sala independiente · 5 PCs" data-media-photo="vip" loading="lazy" decoding="async"><span class="club-expand" aria-hidden="true"><img class="club-icon" src="/assets/icons/expand.svg" alt="" width="20" height="20"></span></a><figcaption><div class="club-room-title"><h3 data-media-label="names.2">VIP · Sala independiente</h3><strong data-media-label="seats.2">5 PCs</strong></div><p data-media-label="specs.2">RTX 5070 · ASUS 27″ · 280 Hz</p></figcaption></figure></div><div class="club-section-actions"><a class="button primary" href="/contacto/" data-media-label="roomCta">Consultar disponibilidad</a><a class="button ghost" href="/sobre-colizeum/#galeria" data-media-label="galleryCta">Ver todas las fotos</a></div></section>
+      <!-- club-rooms:end -->
 
       <section class="section prices" id="precios">
         <div class="section-head">
@@ -164,7 +169,9 @@
 
       <section class="section arena" id="arena">
         <div class="arena-visual">
-          <img src="assets/barcelona-club-photo.png" alt="Zona PC de COLIZEUM Barcelona con equipos gaming y luces RGB" data-i18n-attr="alt:arena.imageAlt">
+          <!-- club-arena-image:start -->
+<img class="club-photo " src="/assets/club/interior-960.webp" srcset="/assets/club/interior-480.webp 319w, /assets/club/interior-960.webp 640w, /assets/club/interior-1920.webp 1280w" sizes="(max-width: 700px) 100vw, 50vw" width="640" height="960" alt="Interior del club y menú" data-media-photo="interior" loading="lazy" decoding="async">
+      <!-- club-arena-image:end -->
         </div>
         <div class="arena-copy">
           <p class="eyebrow" data-i18n="arena.eyebrow">La arena</p>
@@ -585,6 +592,7 @@
     </div>
 
     <script src="script.js?v=hours-rooms-20261125"></script>
-    <script src="/google-ads.js?v=bday-20261111"></script>
+    <script src="/google-ads.js?v=packages-photos-20261125"></script>
+    <script type="module" src="/club-media.js?v=photos-20261125"></script>
   </body>
 </html>
